@@ -6,12 +6,26 @@ import entities.Question;
 
 public class TrueFalseGameSession implements GameSession {
 	ArrayList<Question> questionList = new ArrayList<Question>(); 
-	Question nextQuestion;
-	int index=0;
+	long score;
+	int penalty;
+	int prize;
+	int index=-1;
 
 	public boolean answer(int answer) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public void setPenalty(int penalty) {
+		this.penalty = penalty;
+	}
+	
+	public void setPrize(int prize) {
+		this.prize = prize;
+	}
+	
+	public long getScore() {
+		return this.score;
 	}
 
 	public void initSession() {
@@ -20,12 +34,19 @@ public class TrueFalseGameSession implements GameSession {
 	}
 
 	public void score(boolean flag) {
-		// TODO Auto-generated method stub
+		if(flag) {
+			score+=prize;
+		} else {
+			score-=penalty;
+		}
 	}
 
 	public Question getNextQuestion() {
-		// TODO Auto-generated method stub
-		return activeQuestion;
+		index++;
+		if(questionList.size()>index) {
+			return questionList.get(index);
+		}
+		return null;
 	}
 
 }
