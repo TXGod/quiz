@@ -9,10 +9,14 @@ public class TrueFalseGameSession implements GameSession {
 	long score;
 	int penalty;
 	int prize;
+	String[] tags;
 	int index=-1;
+	
+	public TrueFalseGameSession() {
+		
+	}
 
 	public boolean answer(int answer) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	
