@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import entities.Question;
@@ -22,24 +24,58 @@ import entities.QuestionContainer;
 public class QuestionController {
 	File file;
 	ObjectMapper objMapper;
+	FileReader fileReader;
 	FileWriter fileWriter;
 	Scanner scanner;
 
 	public QuestionController() {
 		file = new File("Questions.txt");
 		objMapper = new ObjectMapper();
+		try {
+			fileWriter = new FileWriter(file, true);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void readQuestions() {
+		try {
+			scanner = new Scanner(file);
+			Question temp;
+			while(scanner.hasNextLine()) {
+				temp = objMapper.readValue(scanner.nextLine(), Question.class);
+				QuestionContainer.addQuestion(temp);
+			}
+			temp = null;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			scanner.close();
+			scanner = null;
+		}
 	}
 
 	private List<Question> getTaggedQuestionList(Predicate<? super Question> predicate) {
 		return QuestionContainer.getQuestionList().stream().filter(predicate)
 				.collect(Collectors.toCollection(ArrayList::new));
 	}
-	
-	public List<Question> getQuestions(int number, Predicate<? super Question> predicate) { 
+
+	public List<Question> getQuestions(int number, Predicate<? super Question> predicate) {
 		List<Question> taggedQuestionList = getTaggedQuestionList(predicate);
 		List<Question> temp = new ArrayList<Question>();
 		Collections.shuffle(taggedQuestionList);
-		for(int i=0;i<number;i++) {
+		for (int i = 0; i < number; i++) {
 			temp.add(taggedQuestionList.get(i));
 		}
 		return temp;
@@ -70,7 +106,7 @@ public class QuestionController {
 
 	public void addQuestion(Question question) {
 		try {
-			fileWriter = new FileWriter(file, true);
+
 			String temp = objMapper.writeValueAsString(question);
 			System.out.println(temp);
 			fileWriter.write(temp + System.lineSeparator());
@@ -79,7 +115,7 @@ public class QuestionController {
 			e.printStackTrace();
 		} finally {
 			try {
-				fileWriter.close();
+				fileWriter.flush();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

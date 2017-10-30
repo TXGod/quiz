@@ -1,23 +1,24 @@
 package session;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import entities.Question;
 
 public class TrueFalseGameSession implements GameSession {
-	ArrayList<Question> questionList = new ArrayList<Question>(); 
+	List<Question> questionList;
 	long score;
 	int penalty;
 	int prize;
 	String[] tags;
 	int index=-1;
 	
-	public TrueFalseGameSession() {
-		
+	public TrueFalseGameSession(List<Question> questionList) {
+		this.questionList = questionList; 
 	}
 
 	public boolean answer(int answer) {
-		return false;
+		return score(answer==questionList.get(index).getRightAnswer());
 	}
 	
 	public void setPenalty(int penalty) {
@@ -32,17 +33,13 @@ public class TrueFalseGameSession implements GameSession {
 		return this.score;
 	}
 
-	public void initSession() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void score(boolean flag) {
+	public boolean score(boolean flag) {
 		if(flag) {
 			score+=prize;
-		} else {
-			score-=penalty;
+			return flag;
 		}
+			score-=penalty;
+			return flag;
 	}
 
 	public Question getNextQuestion() {
