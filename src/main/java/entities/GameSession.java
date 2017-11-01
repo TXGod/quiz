@@ -1,6 +1,4 @@
-package session;
-
-import entities.Question;
+package entities;
 
 public interface GameSession {
 	public boolean answer(int answer);

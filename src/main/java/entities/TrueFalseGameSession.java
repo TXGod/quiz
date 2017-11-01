@@ -1,9 +1,7 @@
-package session;
+package entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import entities.Question;
 
 public class TrueFalseGameSession implements GameSession {
 	List<Question> questionList;

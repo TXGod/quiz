@@ -1,8 +1,6 @@
-package session;
+package entities;
 
 import java.util.List;
-
-import entities.Question;
 
 public class GameSessionFactoryImpl implements GameSessionFactory {
 

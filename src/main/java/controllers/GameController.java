@@ -2,19 +2,20 @@ package controllers;
 
 import java.util.List;
 
+import entities.GameSession;
+import entities.GameSessionFactory;
+import entities.GameSessionFactoryImpl;
 import entities.Question;
-import session.GameSession;
-import session.GameSessionFactory;
-import session.GameSessionFactoryImpl;
+import repositories.GameSessionRepository;
 
 public class GameController {
-	GameSessionFactory gameSessionFactory;
+	GameSessionRepository gameSessionRepository;
 	
 	GameController() {
-		this.gameSessionFactory = new GameSessionFactoryImpl();
+		this.gameSessionRepository = new GameSessionRepository();
 	}
 		
 	public GameSession getGameSession(List<Question> questionList) {
-		return gameSessionFactory.getTrueFalseGameSession(questionList);
+		return gameSessionRepository.getTrueFalseGameSession(questionList);
 	}
 }
