@@ -25,7 +25,7 @@ public class QuestionController {
 		questionRepository.removeQuestion(question);
 	}
 	
-	public List<Question> getQuestions(int number, Predicate<Question> predicate) {
+	public List<Question> getQuestions(int number, Predicate<? super Question> predicate) {
 		return questionRepository.getQuestions(number, predicate);
 	}
 
