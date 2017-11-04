@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
 public class MainMenu extends Application {
+	
+	StackPane root;
 
 	StackPane root;
 	Scene mainScene;
@@ -20,6 +22,7 @@ public class MainMenu extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 
 		this.root = new StackPane();
 		mainScene = new Scene(this.root, 300, 250);
@@ -55,6 +58,14 @@ public class MainMenu extends Application {
 		editQuestions.setOnAction(e -> {
 
 		});
+=======
+		this.root = new StackPane();
+        Scene scene = new Scene(root, 300, 250);
+        
+        primaryStage.setTitle("Quiz");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+>>>>>>> 1eb27a6abefd89cc68066a1c70c32a8650701bde
 	}
 
 }
