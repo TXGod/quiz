@@ -10,15 +10,15 @@ import javafx.scene.layout.StackPane;
  
 
 public class MainMenu extends Application {
+	
+	StackPane root;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		StackPane root = new StackPane();
-       // root.getChildren().add();
-
+		this.root = new StackPane();
         Scene scene = new Scene(root, 300, 250);
-
+        
         primaryStage.setTitle("Quiz");
         primaryStage.setScene(scene);
         primaryStage.show();
