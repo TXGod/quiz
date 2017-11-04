@@ -67,5 +67,4 @@ public class MainMenu extends Application {
         primaryStage.show();
 >>>>>>> 1eb27a6abefd89cc68066a1c70c32a8650701bde
 	}
-
 }
