@@ -19,8 +19,8 @@ public class Main {
 		// * questionController.addQuestion(question);
 		// questionController.removeQuestion(question);
 		// questionController.addQuestion(question);
-		/*questionController.readQuestions();
-		for (Question tempQuestion : questionController.getQuestions(3, e -> {
+		questionController.readQuestions();
+		/*for (Question tempQuestion : questionController.getQuestions(3, e -> {
 			if (e.getTags() != null) {
 				StringTokenizer tokens = new StringTokenizer("aaa");
 				while (tokens.hasMoreTokens()) {

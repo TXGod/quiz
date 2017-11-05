@@ -30,34 +30,34 @@ public class Game {
 	
 	private void initGame() {
 		
-		Button right = new Button("Prawda") ;
-		right.setTranslateX(0);
-		right.setTranslateY(-200);
+		Button right = new Button("Prawda") ; 
+		right.setTranslateX(-200);
+		right.setTranslateY(200);
 		root.getChildren().add(right);
 		
 		Button wrong = new Button("Fa³sz");
-		wrong.setTranslateX(0);
+		wrong.setTranslateX(200);
 		wrong.setTranslateY(200);
 		root.getChildren().add(wrong);
 		
 		Label title = new Label("Tytu³");
-		title.setTranslateX(300);
-		title.setTranslateY(0);
+		title.setTranslateX(0);
+		title.setTranslateY(-300);
 		root.getChildren().add(title);
 		
 		Label desc = new Label("Treœæ");
-		desc.setTranslateX(200);
-		desc.setTranslateY(0);
+		desc.setTranslateX(0);
+		desc.setTranslateY(-270);
 		root.getChildren().add(desc);
 		
 		Label img = new Label("Obraz");
-		img.setTranslateX(300);
-		img.setTranslateY(0);
+		img.setTranslateX(0);
+		img.setTranslateY(-200);
 		root.getChildren().add(img);
 		
 		Label score = new Label("Wynik");
-		score.setTranslateX(-100);
-		score.setTranslateY(200);
+		score.setTranslateX(-250);
+		score.setTranslateY(300);
 		root.getChildren().add(score);
 		
 		
