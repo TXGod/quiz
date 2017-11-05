@@ -19,6 +19,6 @@ public class QuestionContainer {
 		}
 		
 		public static void empty() {
-			
+			questionList = new ArrayList<Question>();
 		}
 }

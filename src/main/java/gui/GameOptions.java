@@ -68,12 +68,12 @@ public class GameOptions {
 		start.setTranslateX(-100);
 		start.setTranslateY(100);
 		start.setOnAction(e -> {
-			StringTokenizer tokens = new StringTokenizer(tags.getText());
 			Game game = new Game(gameController.getGameSession(
 					questionController.getQuestions(Integer.parseInt(questionsNumber.getText()), question -> {
-						if (tags.getText().equals(null)) {
+						if (tags.getText().equals(null) || tags.getText().equals("")) {
 							return true;
 						}
+						StringTokenizer tokens = new StringTokenizer(tags.getText());
 						while (tokens.hasMoreTokens()) {
 							for (String tag : question.getTags()) {
 								if (tag.equals(tokens.nextToken())) {
@@ -85,7 +85,6 @@ public class GameOptions {
 					})), mainMenu);
 		});
 		root.getChildren().add(start);
-
 	}
 
 }

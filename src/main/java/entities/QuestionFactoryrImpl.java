@@ -1,8 +1,8 @@
 package entities;
 
-public class QuestionFactoryImpl implements QuestionFactory {
+public class QuestionFactoryrImpl implements QuestionFactory {
 
-	public Question buildQuestion(String title, String[] tags, String desc, byte rightAnswer) {
+	public Question getQuestion(String title, String[] tags, String desc, byte rightAnswer) {
 		Question question = new Question();
 		question.setTitle(title);
 		question.setTags(tags);

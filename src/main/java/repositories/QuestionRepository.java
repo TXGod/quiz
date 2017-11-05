@@ -41,6 +41,7 @@ public class QuestionRepository {
 
 	public void readQuestions() {
 		try {
+			QuestionContainer.empty();
 			scanner = new Scanner(file);
 			Question temp;
 			while(scanner.hasNextLine()) {
