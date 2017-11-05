@@ -11,7 +11,7 @@ import repositories.GameSessionRepository;
 public class GameController {
 	GameSessionRepository gameSessionRepository;
 	
-	GameController() {
+	public GameController() {
 		this.gameSessionRepository = new GameSessionRepository();
 	}
 		

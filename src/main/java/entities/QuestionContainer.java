@@ -17,4 +17,8 @@ public class QuestionContainer {
 		public static List<Question> getQuestionList() {
 			return questionList;
 		}
+		
+		public static void empty() {
+			
+		}
 }

@@ -1,7 +1,12 @@
 package gui;
 
+import java.util.function.Predicate;
+
 import controllers.GameController;
 import controllers.QuestionController;
+import entities.GameSession;
+import entities.Question;
+import entities.TrueFalseGameSession;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
@@ -11,9 +16,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
 public class MainMenu extends Application {
-	
-	StackPane root;
 
+	Stage primaryStage;
 	StackPane root;
 	Scene mainScene;
 	GameController gameController;
@@ -21,12 +25,12 @@ public class MainMenu extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		gameController = new GameController();
+		questionController = new QuestionController();
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
-
 		this.root = new StackPane();
+		this.primaryStage = primaryStage;
 		mainScene = new Scene(this.root, 300, 250);
-
 		primaryStage.setTitle("Quiz");
 		primaryStage.setScene(mainScene);
 		primaryStage.show();
@@ -42,29 +46,21 @@ public class MainMenu extends Application {
 		editQuestions.setTranslateX(0);
 		editQuestions.setTranslateY(100);
 		root.getChildren().add(editQuestions);
-		initListeners(editQuestions, newGame);
+		initListeners(newGame, editQuestions);
 	}
 
 	private void initListeners(Button newGame, Button editQuestions) {
-		questionController.getQuestions(10, (Question a) -> {});
 		newGame.setOnAction(e -> {
 			Scene scene = new Scene(new StackPane(), 300, 250);
-			Game game = new Game(gameController.getGameSession(
-					questionController.getQuestions(10, (Question q) -> {
-						
-					}));
-			scene = null;
+			primaryStage.setScene(scene);
+			GameOptions gameOptions = new GameOptions(scene, this, gameController, questionController);
 		});
 		editQuestions.setOnAction(e -> {
 
 		});
-=======
-		this.root = new StackPane();
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Quiz");
-        primaryStage.setScene(scene);
-        primaryStage.show();
->>>>>>> 1eb27a6abefd89cc68066a1c70c32a8650701bde
+	}
+	
+	public void backToMainScene() {
+		primaryStage.setScene(mainScene);
 	}
 }
