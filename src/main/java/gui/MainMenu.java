@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 
 public class MainMenu extends Application {
@@ -22,6 +23,7 @@ public class MainMenu extends Application {
 	Scene mainScene;
 	GameController gameController;
 	QuestionController questionController;
+	Label result;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -38,6 +40,11 @@ public class MainMenu extends Application {
 	}
 
 	private void initGui() {
+		
+		result = new Label("");
+		result.setTranslateX(0);
+		result.setTranslateY(-100);
+		root.getChildren().add(result);
 
 		Button newGame = new Button("Rozpocznij Grê");
 		root.getChildren().add(newGame);
@@ -46,6 +53,7 @@ public class MainMenu extends Application {
 		editQuestions.setTranslateX(0);
 		editQuestions.setTranslateY(100);
 		root.getChildren().add(editQuestions);
+		
 		initListeners(newGame, editQuestions);
 	}
 
@@ -61,6 +69,12 @@ public class MainMenu extends Application {
 	}
 	
 	public void backToMainScene() {
+		primaryStage.setScene(mainScene);
+		primaryStage.show();
+	}
+	
+	public void backToMainScene(long result) {
+		this.result.setText("Ostatni Wynik: " + result);
 		primaryStage.setScene(mainScene);
 		primaryStage.show();
 	}

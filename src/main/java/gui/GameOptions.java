@@ -2,6 +2,8 @@ package gui;
 
 import java.util.StringTokenizer;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import controllers.GameController;
 import controllers.QuestionController;
 import entities.GameSessionFactory;
@@ -68,16 +70,22 @@ public class GameOptions {
 		start.setTranslateX(-100);
 		start.setTranslateY(100);
 		start.setOnAction(e -> {
+			if(!NumberUtils.isNumber(questionsNumber.getText())) {
+				questionsNumberLabel.setText("Musisz podaæ liczbê");
+				return;
+			}
 			Game game = new Game(gameController.getGameSession(
 					questionController.getQuestions(Integer.parseInt(questionsNumber.getText()), question -> {
 						if (tags.getText().equals(null) || tags.getText().equals("")) {
 							return true;
 						}
-						StringTokenizer tokens = new StringTokenizer(tags.getText());
-						while (tokens.hasMoreTokens()) {
-							for (String tag : question.getTags()) {
-								if (tag.equals(tokens.nextToken())) {
-									return true;
+						if (question.getTags() != null) {
+							StringTokenizer tokens = new StringTokenizer(tags.getText());
+							while (tokens.hasMoreTokens()) {
+								for (String tag : question.getTags()) {
+									if (tag.equals(tokens.nextToken())) {
+										return true;
+									}
 								}
 							}
 						}

@@ -44,7 +44,7 @@ public class QuestionRepository {
 			QuestionContainer.empty();
 			scanner = new Scanner(file);
 			Question temp;
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				temp = objMapper.readValue(scanner.nextLine(), Question.class);
 				QuestionContainer.addQuestion(temp);
 			}
@@ -76,8 +76,11 @@ public class QuestionRepository {
 		List<Question> taggedQuestionList = getTaggedQuestionList(predicate);
 		List<Question> temp = new ArrayList<Question>();
 		Collections.shuffle(taggedQuestionList);
-		for (int i = 0; i <= number-1; i++) {
-			temp.add(taggedQuestionList.get(i));
+		if(number>taggedQuestionList.size()) {
+			number = taggedQuestionList.size();
+		}
+		for (int i = 0; i <= number - 1; i++) {
+				temp.add(taggedQuestionList.get(i));
 		}
 		return temp;
 	}

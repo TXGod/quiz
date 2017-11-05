@@ -1,10 +1,8 @@
-{"title":null,"desc":null,"tags":null,"rightAnswer":0}
-{"title":null,"desc":null,"tags":null,"rightAnswer":0}
-{"title":"allel","desc":null,"tags":null,"rightAnswer":0}
-{"title":"allel","desc":null,"tags":["aaa"],"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["bbb"],"rightAnswer":0}
+{"title":null,"desc":null,"tags":null,"imgPath":null,"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":1}
+{"title":null,"desc":null,"tags":null,"imgPath":null,"rightAnswer":0}
+{"title":null,"desc":null,"tags":null,"imgPath":null,"rightAnswer":1}
+{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":0}
+{"title":"Kura","desc":"czy kura by³a pierwsza","tags":["egzystencjonalne"],"imgPath":null,"rightAnswer":1}

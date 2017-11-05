@@ -11,14 +11,17 @@ public class Main {
 		QuestionController questionController = new QuestionController();
 
 		// * QuestionFactory qFactory = new QuestionFactoryImpl();
-		// Question question = new Question();
-		// question.setTitle("lubo");
-		// question.setTags(new String[] {"bbb"});
-		// * questionController.addQuestion(new Question());
-		// * questionController.addQuestion(new Question());
-		// * questionController.addQuestion(question);
-		// questionController.removeQuestion(question);
-		// questionController.addQuestion(question);
+		//Question question = new Question();
+		//question.setTitle("Kura");
+		//question.setTags(new String[] {"egzystencjonalne"});
+		//question.setDesc("czy kura by³a pierwsza");
+		//question.setRightAnswer((byte) 1);
+		//questionController.addQuestion(question);
+		// questionController.addQuestion(new Question());
+		//questionController.addQuestion(new Question());
+		//questionController.addQuestion(question);
+		//questionController.removeQuestion(question);
+		//questionController.addQuestion(question);
 		questionController.readQuestions();
 		/*for (Question tempQuestion : questionController.getQuestions(3, e -> {
 			if (e.getTags() != null) {

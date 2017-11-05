@@ -4,6 +4,14 @@ public class Question {
 	String title;
 	String desc;
 	String[] tags;
+	String imgPath;
+	
+	public String getImgPath() {
+		return imgPath;
+	}
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
 	byte rightAnswer;
 	
 	public String getTitle() {
