@@ -1,9 +1,10 @@
 {"title":null,"desc":null,"tags":null,"rightAnswer":0}
 {"title":null,"desc":null,"tags":null,"rightAnswer":0}
 {"title":"allel","desc":null,"tags":null,"rightAnswer":0}
-{"title":null,"desc":null,"tags":null,"rightAnswer":0}
-{"title":null,"desc":null,"tags":null,"rightAnswer":0}
-{"title":"allel","desc":null,"tags":null,"rightAnswer":0}
-{"title":null,"desc":null,"tags":null,"rightAnswer":0}
-{"title":null,"desc":null,"tags":null,"rightAnswer":0}
-{"title":"allel","desc":null,"tags":null,"rightAnswer":0}
+{"title":"allel","desc":null,"tags":["aaa"],"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["aaa"],"rightAnswer":0}
+{"title":"lubo","desc":null,"tags":["bbb"],"rightAnswer":0}

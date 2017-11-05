@@ -16,13 +16,16 @@ import javafx.scene.Scene;
 public class Game {
 	GameSession gameSession;
 	StackPane root;
+	Scene scene;
 	MainMenu mainMenu;
 		
 	public Game(GameSession gameSession, MainMenu mainMenu) {
 		this.mainMenu = mainMenu;
 		this.gameSession = gameSession;
-		this.root = (StackPane) root;
-		
+		scene = new Scene(new StackPane(), 550, 660);
+		root = (StackPane) scene.getRoot();
+		mainMenu.setScene(scene);
+		initGame();
 	}
 	
 	private void initGame() {
@@ -38,23 +41,23 @@ public class Game {
 		root.getChildren().add(wrong);
 		
 		Label title = new Label("Tytu³");
-		wrong.setTranslateX(300);
-		wrong.setTranslateY(0);
+		title.setTranslateX(300);
+		title.setTranslateY(0);
 		root.getChildren().add(title);
 		
 		Label desc = new Label("Treœæ");
-		wrong.setTranslateX(200);
-		wrong.setTranslateY(0);
+		desc.setTranslateX(200);
+		desc.setTranslateY(0);
 		root.getChildren().add(desc);
 		
 		Label img = new Label("Obraz");
-		wrong.setTranslateX(300);
-		wrong.setTranslateY(0);
+		img.setTranslateX(300);
+		img.setTranslateY(0);
 		root.getChildren().add(img);
 		
 		Label score = new Label("Wynik");
-		wrong.setTranslateX(-100);
-		wrong.setTranslateY(200);
+		score.setTranslateX(-100);
+		score.setTranslateY(200);
 		root.getChildren().add(score);
 		
 		

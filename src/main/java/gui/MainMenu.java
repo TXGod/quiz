@@ -62,5 +62,11 @@ public class MainMenu extends Application {
 	
 	public void backToMainScene() {
 		primaryStage.setScene(mainScene);
+		primaryStage.show();
+	}
+	
+	public void setScene(Scene scene) {
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 }

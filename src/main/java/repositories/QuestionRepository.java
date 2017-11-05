@@ -76,7 +76,7 @@ public class QuestionRepository {
 		List<Question> taggedQuestionList = getTaggedQuestionList(predicate);
 		List<Question> temp = new ArrayList<Question>();
 		Collections.shuffle(taggedQuestionList);
-		for (int i = 0; i < number; i++) {
+		for (int i = 0; i <= number-1; i++) {
 			temp.add(taggedQuestionList.get(i));
 		}
 		return temp;
