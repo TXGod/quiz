@@ -1,8 +1,6 @@
-{"title":null,"desc":null,"tags":null,"imgPath":null,"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":1}
-{"title":null,"desc":null,"tags":null,"imgPath":null,"rightAnswer":0}
-{"title":null,"desc":null,"tags":null,"imgPath":null,"rightAnswer":1}
-{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":0}
-{"title":"lubo","desc":null,"tags":["bbb"],"imgPath":null,"rightAnswer":0}
-{"title":"Kura","desc":"czy kura by³a pierwsza","tags":["egzystencjonalne"],"imgPath":"logo.jpg","rightAnswer":1}
+{"title":"Allel","desc":"lalala","tags":["sport","banan"],"imgPath":"logo.jpg","rightAnswer":1}
+{"title":"asdaw","desc":"awrawe","tags":["banan","morda"],"imgPath":"","rightAnswer":0}
+{"title":"dwae","desc":"sfezf","tags":["kwadrat","elo"],"imgPath":"","rightAnswer":0}
+{"title":"sadawe","desc":"asf","tags":["sport","kwadrat"],"imgPath":"","rightAnswer":0}
+{"title":"adasda","desc":"eawewrfawr","tags":["kwadrat"],"imgPath":"logo.jpg","rightAnswer":1}
+{"title":"Krystianos","desc":"eawewrfawr","tags":["krystiany"],"imgPath":"logo.jpg","rightAnswer":1}

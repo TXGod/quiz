@@ -54,7 +54,7 @@ public class Game {
 		falseBtn.setTranslateY(200);
 		root.getChildren().add(falseBtn);
 		falseBtn.setOnAction(e -> {
-			gameSession.answer(2);
+			gameSession.answer(0);
 			update();
 		});
 
@@ -76,21 +76,22 @@ public class Game {
 
 	private void update() {
 		if ((activeQuestion = gameSession.getNextQuestion()) != null) {
-			if (activeQuestion.getTitle()!=null) {
-				System.out.println(activeQuestion.getTitle());
+			if (!activeQuestion.getTitle().equals("")) {
 				title.setText(activeQuestion.getTitle());
 			} else {
 				title.setText("");
 			}
-			if (activeQuestion.getDesc()!=null) {
+			if (!activeQuestion.getDesc().equals("")) {
 				desc.setText(activeQuestion.getDesc());
 			} else {
 				desc.setText("");
 			}
-			if (activeQuestion.getImgPath()!=null) {
+			if (!activeQuestion.getImgPath().equals("")) {
 				root.getChildren().remove(imgView);
 				img = new Image("file:" + activeQuestion.getImgPath());
 				imgView = new ImageView(img);
+			//	imgView.setTranslateX(value);
+				imgView.setTranslateY(-50);
 				root.getChildren().add(imgView);
 			} else {
 				root.getChildren().remove(imgView);

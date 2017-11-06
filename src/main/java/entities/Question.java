@@ -5,6 +5,7 @@ public class Question {
 	String desc;
 	String[] tags;
 	String imgPath;
+	byte rightAnswer;
 	
 	public String getImgPath() {
 		return imgPath;
@@ -12,7 +13,6 @@ public class Question {
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
-	byte rightAnswer;
 	
 	public String getTitle() {
 		return title;

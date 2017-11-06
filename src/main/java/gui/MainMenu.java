@@ -67,7 +67,7 @@ public class MainMenu extends Application {
 			GameOptions gameOptions = new GameOptions(scene, this, gameController, questionController);
 		});
 		editQuestions.setOnAction(e -> {
-			Scene scene2 = new Scene(new StackPane(), 300, 250);
+			Scene scene2 = new Scene(new StackPane(), 500, 400);
 			EditingPanel editingPanel = new EditingPanel(scene2, this, questionController, questionFactoryImpl);
 		});
 	}

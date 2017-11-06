@@ -76,14 +76,16 @@ public class GameOptions {
 			}
 			Game game = new Game(gameController.getGameSession(
 					questionController.getQuestions(Integer.parseInt(questionsNumber.getText()), question -> {
-						if (tags.getText().equals(null) || tags.getText().equals("")) {
+						if (tags.getText().equals("")) {
 							return true;
 						}
-						if (question.getTags() != null) {
+						if (question.getTags() != null && !question.getTags().equals("")) {
 							StringTokenizer tokens = new StringTokenizer(tags.getText());
+							String temp;
 							while (tokens.hasMoreTokens()) {
+								temp = tokens.nextToken();
 								for (String tag : question.getTags()) {
-									if (tag.equals(tokens.nextToken())) {
+									if (tag.equals(temp)) {
 										return true;
 									}
 								}
