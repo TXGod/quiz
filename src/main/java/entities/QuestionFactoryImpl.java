@@ -1,6 +1,6 @@
 package entities;
 
-public class QuestionFactoryrImpl implements QuestionFactory {
+public class QuestionFactoryImpl implements QuestionFactory {
 
 	public Question getQuestion(String title, String[] tags, String desc, byte rightAnswer) {
 		Question question = new Question();

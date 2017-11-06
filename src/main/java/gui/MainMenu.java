@@ -6,6 +6,7 @@ import controllers.GameController;
 import controllers.QuestionController;
 import entities.GameSession;
 import entities.Question;
+import entities.QuestionFactoryImpl;
 import entities.TrueFalseGameSession;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -23,6 +24,7 @@ public class MainMenu extends Application {
 	Scene mainScene;
 	GameController gameController;
 	QuestionController questionController;
+	QuestionFactoryImpl questionFactoryImpl;
 	Label result;
 
 	@Override
@@ -46,6 +48,7 @@ public class MainMenu extends Application {
 		result.setTranslateY(-100);
 		root.getChildren().add(result);
 
+		
 		Button newGame = new Button("Rozpocznij Grê");
 		root.getChildren().add(newGame);
 
@@ -64,7 +67,8 @@ public class MainMenu extends Application {
 			GameOptions gameOptions = new GameOptions(scene, this, gameController, questionController);
 		});
 		editQuestions.setOnAction(e -> {
-
+			Scene scene2 = new Scene(new StackPane(), 300, 250);
+			EditingPanel editingPanel = new EditingPanel(scene2, this, questionController, questionFactoryImpl);
 		});
 	}
 	
