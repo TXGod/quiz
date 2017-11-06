@@ -23,6 +23,7 @@ import entities.QuestionContainer;
 
 public class QuestionRepository {
 	File file;
+	QuestionContainer questionContainer;
 	ObjectMapper objMapper;
 	FileReader fileReader;
 	FileWriter fileWriter;
@@ -31,6 +32,7 @@ public class QuestionRepository {
 	public QuestionRepository() {
 		file = new File("Questions.txt");
 		objMapper = new ObjectMapper();
+		questionContainer = new QuestionContainer();
 		try {
 			fileWriter = new FileWriter(file, true);
 		} catch (IOException e) {
@@ -41,12 +43,12 @@ public class QuestionRepository {
 
 	public void readQuestions() {
 		try {
-			QuestionContainer.empty();
+			questionContainer.empty();
 			scanner = new Scanner(file);
 			Question temp;
 			while (scanner.hasNextLine()) {
 				temp = objMapper.readValue(scanner.nextLine(), Question.class);
-				QuestionContainer.addQuestion(temp);
+				questionContainer.addQuestion(temp);
 			}
 			temp = null;
 		} catch (FileNotFoundException e) {
@@ -68,7 +70,7 @@ public class QuestionRepository {
 	}
 
 	private List<Question> getTaggedQuestionList(Predicate<? super Question> predicate) {
-		return QuestionContainer.getQuestionList().stream().filter(predicate)
+		return questionContainer.getQuestionList().stream().filter(predicate)
 				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
@@ -105,14 +107,12 @@ public class QuestionRepository {
 		} finally {
 			scanner.close();
 		}
-		QuestionContainer.removeQuestion(question);
+		questionContainer.removeQuestion(question);
 	}
 
 	public void addQuestion(Question question) {
 		try {
-
 			String temp = objMapper.writeValueAsString(question);
-			System.out.println(temp);
 			fileWriter.write(temp + System.lineSeparator());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -125,6 +125,6 @@ public class QuestionRepository {
 				e.printStackTrace();
 			}
 		}
-		QuestionContainer.addQuestion(question);
+		questionContainer.addQuestion(question);
 	}
 }

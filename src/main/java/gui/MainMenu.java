@@ -29,7 +29,7 @@ public class MainMenu extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		gameController = new GameController();
 		questionController = new QuestionController();
-		// TODO Auto-generated method stub
+		questionController.readQuestions();
 		this.root = new StackPane();
 		this.primaryStage = primaryStage;
 		mainScene = new Scene(this.root, 300, 250);
